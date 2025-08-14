@@ -1,0 +1,32 @@
+{
+  "name": "express-errors",
+  "version": "0.1.0",
+  "description": "Streamlined error handling for Express applications",
+  "scripts": {
+    "build": "tsc",
+    "check-types": "tsc --noEmit",
+    "dev": "tsx --watch src/index.ts",
+    "lint": "eslint src/",
+    "lint:fix": "eslint --fix src/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ryan Quinn",
+  "license": "MIT",
+  "packageManager": "pnpm@10.14.0",
+  "dependencies": {
+    "express": "^5.1.0",
+    "tsx": "^4.20.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.31.0",
+    "@tsconfig/node20": "^20.1.6",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.2.1",
+    "eslint": "^9.31.0",
+    "eslint-config-prettier": "^10.1.1",
+    "tsc": "^2.0.4",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.37.0"
+  }
+}
