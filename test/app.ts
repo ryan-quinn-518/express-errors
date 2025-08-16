@@ -20,7 +20,7 @@ APP
     .get("/basic403", () => { throw new HttpError("forbidden"); } )
     .get("/basic409", () => { throw new HttpError("conflict"); } )
 
-    .get("/problem400", () => { throw new HttpError("badRequest", undefined, {}); } )
+    .get("/problem400", () => { throw new HttpError("badRequest", "ill-formed", {}); } )
 
     .get("/default500", () => { throw new Error("bad stuff"); } )
 

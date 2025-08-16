@@ -17,6 +17,16 @@ import {
 ///////////////////////////////////////////////////////////////////////////////
 // Helpers
 ///////////////////////////////////////////////////////////////////////////////
+function coerceToHttpError( err: any ) {
+    if( err instanceof HttpError ) {
+        return err;
+    } else if( err instanceof Error ) {
+        return new HttpError("internalServerError", err.message);
+    } else {
+        return new HttpError("internalServerError");
+    }
+}
+
 function httpErrorStatusCode( errorName: HttpErrorName ) {
     switch(errorName) {
         case "badRequest": return 400;
@@ -87,9 +97,9 @@ export function createGlobalErrorHandler(
     return (err: any, _req: Request, res: Response, _next: NextFunction) => {
         if( logging_fn ) {
             logging_fn(err);
-        }
+        } 
 
-        const httpErr = err instanceof HttpError ? err : new HttpError("internalServerError", (err as Error).message);
+        const httpErr = coerceToHttpError( err );
 
         const {
             status,

@@ -4,11 +4,6 @@
 import { randomUUID as uuidv4 } from "node:crypto";
 
 ///////////////////////////////////////////////////////////////////////////////
-// 3PP Imports
-///////////////////////////////////////////////////////////////////////////////
-import type { NextFunction, Request, Response } from "express";
-
-///////////////////////////////////////////////////////////////////////////////
 // Constants
 ///////////////////////////////////////////////////////////////////////////////
 export const HTTP_ERROR_NAMES = [
@@ -38,8 +33,6 @@ export const HTTP_ERROR_NAMES = [
 ///////////////////////////////////////////////////////////////////////////////
 // Types and Interfaces
 ///////////////////////////////////////////////////////////////////////////////
-export type ExpressMiddleware = (req: Request, res: Response, next: NextFunction) => void;
-
 export type HttpErrorName = typeof HTTP_ERROR_NAMES[number];
 
 // https://datatracker.ietf.org/doc/html/rfc9457
@@ -68,11 +61,11 @@ export class HttpError extends Error {
 
     constructor(
         errorName: HttpErrorName,
-        message?: string,
+        message?: string | null,
         problemDetails?: ProblemDetails,
         errorId?: string,
     ) {
-        super(message);
+        super(message ?? undefined);
 
         this.errorName = errorName;
         this.problemDetails = problemDetails ?? null;

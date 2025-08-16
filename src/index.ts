@@ -5,7 +5,6 @@ import {
     HTTP_ERROR_NAMES,
     HttpError,
 
-    type ExpressMiddleware,
     type HttpErrorName,
     type ProblemDetails,
 } from "./types.js";
@@ -18,7 +17,6 @@ import {
 // Exports
 ///////////////////////////////////////////////////////////////////////////////
 export type {
-    ExpressMiddleware,
     HttpErrorName,
     ProblemDetails,
 };
