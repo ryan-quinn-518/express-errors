@@ -2,10 +2,10 @@
     "extends": "@tsconfig/node20/tsconfig.json",
     "include": ["src/**/*"],
     "compilerOptions": {
-        "outDir": "dist",
+        "esModuleInterop": true,
         "isolatedModules": true,
         "module": "nodenext",
         "moduleResolution": "nodenext",
-        "esModuleInterop": true
+        "outDir": "dist"
     }
 }
