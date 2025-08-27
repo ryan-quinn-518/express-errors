@@ -21,6 +21,13 @@ APP
     .get("/basic409", () => { throw new HttpError("conflict"); } )
 
     .get("/problem400", () => { throw new HttpError("badRequest", "ill-formed", {}); } )
+    .get("/problem422", () => { throw new HttpError("unprocessableContent", null, {
+        "type": "https://example.com/probs/out-of-credit",
+        "title": "You do not have enough credit.",
+        "detail": "Your current balance is 30, but that costs 50.",
+        "instance": "/account/12345/msgs/abc",
+        "balance": 30,
+    }); } )
 
     .get("/default500", () => { throw new Error("bad stuff"); } )
 

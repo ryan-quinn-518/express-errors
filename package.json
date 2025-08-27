@@ -1,5 +1,5 @@
 {
-  "name": "express-errors",
+  "name": "@pronghorn-software/express-errors",
   "version": "0.1.0",
   "description": "Streamlined error handling for Express applications",
   "scripts": {
@@ -12,16 +12,18 @@
   "keywords": [],
   "author": "Ryan Quinn",
   "license": "MIT",
-  "packageManager": "pnpm@10.14.0",
+  "packageManager": "pnpm@10.15.0",
   "dependencies": {
     "http-status": "^2.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.31.0",
     "@tsconfig/node20": "^20.1.6",
+    "@types/chai": "^5.2.2",
     "@types/express": "^5.0.3",
     "@types/node": "^24.2.1",
     "@types/supertest": "^6.0.3",
+    "chai": "^6.0.1",
     "eslint": "^9.31.0",
     "eslint-config-prettier": "^10.1.1",
     "express": "^5.1.0",
