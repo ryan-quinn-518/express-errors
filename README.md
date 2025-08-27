@@ -4,7 +4,7 @@ A centralized error handling library for Express.
 
 ## Installation
 
-Use your preferred Node package manager to install this library in your project.
+Use your preferred Node package manager to install this library in your project. (NOTE: WIP)
 
 ```bash
 pnpm i @pronghorn-software/express-errors
